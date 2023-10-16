@@ -1,0 +1,21 @@
+{
+    "workbench.activityBar.visible": false, // barra derecha De herramientas como el explorador
+    "workbench.colorTheme": "Gruvbox Material Dark",
+    "workbench.iconTheme": "gruvbox-material-icon-theme",
+    "workbench.sideBar.location": "right",
+    "workbench.editor.showTabs": false,
+    "editor.scrollbar.vertical": "hidden",
+    "editor.overviewRulerBorder": false,
+    "editor.hideCursorInOverviewRuler": true,
+    "editor.formatOnSave": true,
+    "editor.guides.indentation": false,
+    "editor.minimap.enabled": false,
+    "editor.fontFamily": "agave Nerd Font",
+    "editor.fontSize": 17,
+    "editor.fontLigatures": true,
+    "editor.glyphMargin": false,
+    "editor.lineNumbers": "relative",
+    "indenticator.width": 1,
+    "indenticator.color.dark": "rgba(255, 255, 255, 0.1)",
+    "workbench.statusBar.visible": true,
+}

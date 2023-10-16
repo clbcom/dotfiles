@@ -122,7 +122,7 @@ rehash_precmd() {
 add-zsh-hook -Uz precmd rehash_precmd
 
 # omz
-alias zshconfig="geany ~/.zshrc"
+alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="thunar ~/.oh-my-zsh"
 
 # ls
@@ -142,7 +142,8 @@ alias lg='lsd -l --group-directories-first'
 alias tree='lsd --tree --group-directories-first'
 
 # NeoVim
-alias nv='nvim -c NvimTreeFocus'
+alias nv='nvim'
+alias nvt='nvim -c NvimTreeFocus .'
 
 # git
 alias gcl='git clone --depth 1'
