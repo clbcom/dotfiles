@@ -87,10 +87,11 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
+#   export EDITOR='nvim'
 # else
 #   export EDITOR='mvim'
 # fi
+export EDITOR='nvim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -144,6 +145,7 @@ alias tree='lsd --tree --group-directories-first'
 # NeoVim
 alias nv='nvim'
 alias nvt='nvim -c NvimTreeFocus .'
+alias native='cd ~/code/native'
 
 # git
 alias gcl='git clone --depth 1'
@@ -155,3 +157,5 @@ alias gp='git push origin master'
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+
+export PATH=$PATH:/home/cristhian/.spicetify
