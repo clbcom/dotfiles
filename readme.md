@@ -44,7 +44,7 @@ makepkg -si
 Java
 
 ```
-sudo pacman -S jdk11-openkdk
+sudo pacman -S jdk11-openjdk
 ```
 
 Agregar la variable de entorno `JAVA_HOME` en `.zshrc`
@@ -57,6 +57,16 @@ lds, bat y mdcat son ls y cat pero con esteroides
 
 ```
 sudo pacman -S lds bat mdcat
+```
+
+Para cambiar entre distintas versiones de java en archlinux usar el siguiente comandos
+```
+# Listamos las versiones de jdk instaladas
+archlinux-java status
+
+# Establecemos el jdk de preferencia
+sudo archlinux-java set java-**-openjdk
+
 ```
 
 Android Studio Descargamos desde su sitio oficial
