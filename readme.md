@@ -101,4 +101,9 @@ sudo pacman -S kitty
 Terminal kitty Clonamos este repositorio y realizamos un enlace simbolico desde
 `~/.config/kitty -> ~/dotfiles/kitty`
 
+Cambiar la distibucion de teclado
+- Ingles
+```setxkbmap us```
+- Español
+```setxkbmap es```
 Lo mismo para otros archivos de configuración
