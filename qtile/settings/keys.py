@@ -49,11 +49,15 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
 
     # ------------ App Configs ------------
 
+    # Distribucion de teclado
+    ([mod], "space", lazy.widget['keyboardlayout'].next_keyboard()),
+
+
     # Menu
-    ([mod], "space", lazy.spawn("rofi -show drun")),
+    ([mod], "m", lazy.spawn("rofi -show drun")),
 
     # Window Nav
-    ([mod, "shift"], "space", lazy.spawn("rofi -show filebrowser")),
+    ([mod, "shift"], "m", lazy.spawn("rofi -show filebrowser")),
 
     # Browser
     ([mod], "b", lazy.spawn("brave")),

@@ -72,21 +72,17 @@ def workspaces():
         separator(),
     ]
 
-# def next_music():
-
-
 primary_widgets = [
     *workspaces(),
 
-
     powerline('active', 'dark'),
-
     widget.Mpris2(
         background=colors['active'],
         foreground=colors['dark'],
         paused_text="{track}  ",
         playing_text="{track}  ",
-        format="{xesam:title}   {xesam:artist}"
+        format="{xesam:title}   {xesam:artist}",
+        max_chars=30
     ),
     icon_click(
         bg="active",
@@ -101,40 +97,56 @@ primary_widgets = [
         callbacks={'Button1': lazy.widget['mpris2'].next()}
     ), # Icon: nf-fa-download
 
-    powerline('color4', 'active'),
+    powerline('active', 'active'),
 
-    icon(bg="color4", text=' '), # Icon: nf-fa-download
-    
-    widget.CheckUpdates(
-        background=colors['color4'],
-        colour_have_updates=colors['text'],
-        colour_no_updates=colors['text'],
-        no_update_string='0',
-        display_format='{updates}',
-        update_interval=1800,
-        custom_command='checkupdates',
+    widget.Volume(
+        background=colors['active'],
+        foreground=colors['text'],
     ),
 
-    powerline('color3', 'color4'),
+    powerline('color1', 'active'),
+    widget.KeyboardLayout(
+        background=colors['color1'],
+        foreground=colors['text'],
+        configured_keyboards=['us dvorak', 'es dvorak', 'es', 'us'],
+        mouse_callbacks={'Button1': lazy.widget['keyboardlayout'].next_keyboard()}
+    ),
 
-    icon(bg="color3", text=' '),  # Icon: nf-fa-feed
-    
-    widget.Net(**base(bg='color3'), interface='wlp2s0'),
+    powerline('color2', 'color1'),
+    widget.Pomodoro(
+        background=colors['color2'],
+        color_active=colors['light'],
+        color_inactive=colors['text']
+    ),
 
-    powerline('color2', 'color3'),
+    # icon(bg="color4", text=' '), # Icon: nf-fa-download
+    # widget.CheckUpdates(
+    #     background=colors['color4'],
+    #     colour_have_updates=colors['text'],
+    #     colour_no_updates=colors['text'],
+    #     no_update_string='0',
+    #     display_format='{updates}',
+    #     update_interval=1800,
+    #     custom_command='checkupdates',
+    # ),
+    # powerline('color3', 'color4'),
+    #
+    # icon(bg="color3", text=' '),  # Icon: nf-fa-feed
+    # widget.Net(**base(bg='color3'), interface='wlp2s0'),
 
-    widget.CurrentLayoutIcon(**base(bg='color2'), scale=0.65),
+    # powerline('color2', 'color3'),
+    # widget.CurrentLayoutIcon(**base(bg='color2'), scale=0.65),
+    # widget.CurrentLayout(**base(bg='color2'), padding=5),
 
-    widget.CurrentLayout(**base(bg='color2'), padding=5),
+    powerline('color3', 'color2'),
+    icon(bg="color3", fontsize=17, text=' '), # Icon: nf-mdi-calendar_clock
+    widget.Memory(background=colors['color3'],foreground=colors['dark']),
 
-    powerline('color1', 'color2'),
+    powerline('color4', 'color3'),
+    icon(bg="color4", fontsize=17, text=' '), # Icon: nf-mdi-calendar_clock
+    widget.Clock(**base(bg='color4'), format='%d/%m/%Y - %H:%M '),
 
-    icon(bg="color1", fontsize=17, text=' '), # Icon: nf-mdi-calendar_clock
-
-    widget.Clock(**base(bg='color1'), format='%d/%m/%Y - %H:%M '),
-
-    powerline('dark', 'color1'),
-
+    powerline('dark', 'color4'),
     widget.Systray(background=colors['dark'], padding=5),
 ]
 
